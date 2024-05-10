@@ -64,9 +64,9 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Get Started"
                     android:background="@drawable/button_background"
-                    android:textColor="@color/light_yellow"/>
+                    android:text="Get Started"
+                    android:textColor="@color/light_yellow" />
             </LinearLayout>
 
         </LinearLayout>
