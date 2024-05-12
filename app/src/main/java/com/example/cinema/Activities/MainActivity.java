@@ -33,28 +33,29 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         
-        sendReques();
+        initView();
+        sendRequest();
     }
 
-    private void sendReques() {
-        mRequestQueue= Volley.newRequestQueue(this);
+    private void sendRequest() {
+        mRequestQueue = Volley.newRequestQueue(this);
         loading1.setVisibility(View.VISIBLE);
-        mStringRequest=new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies?page=2", new Response.Listener<String>() {
+        mStringRequest = new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies?page=2", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Gson gson=new Gson();
+                Gson gson = new Gson();
                 loading1.setVisibility(View.GONE);
-                ListFilm items=gson.fromJson(response,ListFilm.class);
-                adapterNowMovies=new FilmListAdapter(items);
-                recyclerViewNowMovies.setAdapter(adapterNowMovies );
+                ListFilm items = gson.fromJson(response, ListFilm.class);
+                adapterNowMovies = new FilmListAdapter(items);
+                recyclerViewNowMovies.setAdapter(adapterNowMovies);
             }
-        }, new Response.ErrorListener(){
-                @Override
-                        public void onErrorResponse(VolleyError error){
-                        loading1.setVisibility(View.GONE);
-                    Log.i("UiLover","onErrorResponse:"+error.toString());
-                }
-            });
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loading1.setVisibility(View.GONE);
+                Log.i("UiLover", "onErrorResponse:" + error.toString());
+            }
+        });
         mRequestQueue.add(mStringRequest);
     }
 
