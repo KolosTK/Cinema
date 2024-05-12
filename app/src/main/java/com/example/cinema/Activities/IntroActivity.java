@@ -1,4 +1,4 @@
-package com.example.cinema;
+package com.example.cinema.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,8 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.cinema.R;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -23,7 +22,7 @@ public class IntroActivity extends AppCompatActivity {
         getStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(IntroActivity.this,LoginActivity.class));
+                startActivity(new Intent(IntroActivity.this, LoginActivity.class));
             }
         });
     }
