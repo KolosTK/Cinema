@@ -8,7 +8,7 @@
     android:background="@color/black"
     tools:context=".Activities.DetailActivity">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/movieImageDetail"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
                 android:layout_margin="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="@+id/imageView7"
-                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintEnd_toStartOf="@+id/movieImageDetail"
+                app:layout_constraintStart_toEndOf="@+id/movieImageDetail"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
@@ -47,7 +47,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/arrow" />
+                    android:src="@drawable/arrow" />
 
                 <ImageView
                     android:id="@+id/heart"
@@ -58,7 +58,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/heart" />
+                    android:src="@drawable/heart" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -68,33 +68,34 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                app:layout_constraintBottom_toBottomOf="@+id/movieImageDetail"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <TextView
                     android:id="@+id/movieLength"
                     android:layout_width="40dp"
-                    android:layout_height="24dp"
-                    android:layout_marginStart="5dp"
+                    android:layout_height="20dp"
                     android:drawableStart="@drawable/clock"
                     android:drawablePadding="5dp"
                     android:text="0"
                     android:textColor="@color/yellow"
+                    app:layout_constraintBottom_toBottomOf="@+id/movieRaiting"
                     app:layout_constraintStart_toEndOf="@+id/movieRaiting"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/movieRaiting" />
 
                 <TextView
                     android:id="@+id/movieRaiting"
                     android:layout_width="40dp"
-                    android:layout_height="24dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="24dp"
                     android:drawableStart="@drawable/star"
                     android:drawablePadding="5dp"
                     android:text="0"
                     android:textColor="@color/yellow"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
@@ -102,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
+                android:textColor="@color/yellow"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
@@ -112,12 +114,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                app:layout_constraintTop_toBottomOf="@+id/movieImageDetail" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/movieSummary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -128,7 +131,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/genreView" />
 
             <TextView
-                android:id="@+id/movieSummary"
+                android:id="@+id/movieSummaryInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -138,11 +141,11 @@
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                app:layout_constraintStart_toStartOf="@+id/movieSummary"
+                app:layout_constraintTop_toBottomOf="@+id/movieSummary" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/movieActors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -151,10 +154,10 @@
                 android:textColor="@color/yellow"
                 android:textSize="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movieSummary" />
+                app:layout_constraintTop_toBottomOf="@+id/movieSummaryInfo" />
 
             <TextView
-                android:id="@+id/movieActors"
+                android:id="@+id/movieActorsInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -164,30 +167,30 @@
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView10"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintStart_toStartOf="@+id/movieActors"
+                app:layout_constraintTop_toBottomOf="@+id/movieActors" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/imagesRecycler"
+                android:id="@+id/actorsView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movieActors" />
+                app:layout_constraintTop_toBottomOf="@+id/movieActorsInfo" />
 
             <ProgressBar
                 android:id="@+id/progressBarDetail"
                 style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/imagesRecycler"
+                android:layout_width="49dp"
+                android:layout_height="45dp"
+                app:layout_constraintBottom_toTopOf="@+id/actorsView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
