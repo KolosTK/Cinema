@@ -1,8 +1,10 @@
 package com.example.cinema.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -105,6 +107,10 @@ public class DetailActivity extends AppCompatActivity {
         recyclerViewCategory.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
         backImg.setOnClickListener(v -> finish());
-
+        Button seatsButton = findViewById(R.id.seatsButton);
+        seatsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailActivity.this, SeatsActivity.class);
+            startActivity(intent);
+        });
     }
 }

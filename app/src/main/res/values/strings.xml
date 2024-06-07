@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cinema</string>
+    <style name="ButtonTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="buttonStyle">@drawable/button_background</item>
+        <item name="android:buttonStyle">@drawable/button_background</item>
+    </style>
 </resources>
