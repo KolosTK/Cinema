@@ -6,30 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/black">
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="41dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/burgundy"
-        android:textColor="@color/yellow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/screenText" />
-
-    <Button
-        android:id="@+id/butto1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/burgundy"
-        android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/button6"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="@+id/button6" />
-
     <ImageView
         android:id="@+id/arrow"
         android:layout_width="54dp"
@@ -48,24 +24,48 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="56dp"
-        android:text="Cost : 0"
+        android:text="Cost : "
         android:textColor="@color/yellow"
         android:textFontWeight="@integer/material_motion_duration_medium_2"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedButton" />
+        app:layout_constraintTop_toBottomOf="@+id/emptyButton" />
+
+    <TextView
+        android:id="@+id/costAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/yellow"
+        android:textFontWeight="@integer/material_motion_duration_medium_2"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cost"
+        app:layout_constraintStart_toEndOf="@+id/cost"
+        app:layout_constraintTop_toTopOf="@+id/cost" />
 
     <TextView
         android:id="@+id/seats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Seats : 0"
+        android:text="Seats : "
         android:textColor="@color/yellow"
         android:textFontWeight="@integer/material_motion_duration_medium_2"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="@+id/cost"
         app:layout_constraintTop_toBottomOf="@+id/cost" />
+
+    <TextView
+        android:id="@+id/seatsAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/yellow"
+        android:textFontWeight="@integer/material_motion_duration_medium_2"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seats"
+        app:layout_constraintStart_toEndOf="@+id/seats"
+        app:layout_constraintTop_toTopOf="@+id/seats" />
 
     <TextView
         android:id="@+id/timeText"
@@ -107,16 +107,30 @@
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <Button
-        android:id="@+id/emptyButton"
+        android:id="@+id/bookedButton"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/yellow"
-        android:text="Empty"
+        android:text="Booked"
         android:textColor="@color/burgundy"
         app:layout_constraintBottom_toBottomOf="@+id/selectedButton"
         app:layout_constraintEnd_toStartOf="@+id/selectedButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/selectedButton" />
+
+    <Button
+        android:id="@+id/emptyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/burgundy"
+        android:text="Empty"
+        android:textColor="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/selectedButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/selectedButton"
+        app:layout_constraintTop_toTopOf="@+id/selectedButton" />
 
     <Button
         android:id="@+id/selectedButton"
@@ -127,22 +141,57 @@
         android:backgroundTint="@color/brown"
         android:text="Selected"
         android:textColor="@color/light_yellow"
-        app:layout_constraintEnd_toStartOf="@+id/bookedButton"
-        app:layout_constraintStart_toEndOf="@+id/emptyButton"
+        app:layout_constraintEnd_toStartOf="@+id/emptyButton"
+        app:layout_constraintStart_toEndOf="@+id/bookedButton"
         app:layout_constraintTop_toBottomOf="@+id/button11" />
 
     <Button
-        android:id="@+id/bookedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:id="@+id/button1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/burgundy"
-        android:text="Booked"
         android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/selectedButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/selectedButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/button6"
+        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/button6" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/burgundy"
+        android:textColor="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@+id/button14"
+        app:layout_constraintTop_toBottomOf="@+id/button14" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/burgundy"
+        android:textColor="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/burgundy"
+        android:textColor="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="@+id/button5"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button5" />
 
     <Button
         android:id="@+id/button5"
@@ -160,16 +209,16 @@
         app:layout_constraintTop_toBottomOf="@+id/screenText" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button6"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="5dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="41dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/burgundy"
         android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/button5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toTopOf="@+id/button5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenText" />
 
     <Button
         android:id="@+id/button7"
@@ -239,8 +288,8 @@
         android:background="@drawable/button_background"
         android:backgroundTint="@color/burgundy"
         android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/button15"
-        app:layout_constraintEnd_toStartOf="@+id/button15"
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintStart_toEndOf="@+id/button11"
         app:layout_constraintTop_toTopOf="@+id/button11" />
 
@@ -254,7 +303,7 @@
         android:textColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/button14"
         app:layout_constraintEnd_toStartOf="@+id/button14"
-        app:layout_constraintStart_toStartOf="@+id/butto1"
+        app:layout_constraintStart_toStartOf="@+id/button1"
         app:layout_constraintTop_toTopOf="@+id/button14" />
 
     <Button
@@ -268,30 +317,6 @@
         app:layout_constraintEnd_toEndOf="@+id/button6"
         app:layout_constraintStart_toEndOf="@+id/button13"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/burgundy"
-        android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/button16"
-        app:layout_constraintEnd_toStartOf="@+id/button16"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toEndOf="@+id/button12"
-        app:layout_constraintTop_toTopOf="@+id/button16" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/burgundy"
-        android:textColor="@color/yellow"
-        app:layout_constraintEnd_toEndOf="@+id/button14"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
 
     <Button
         android:id="@+id/seatsButton"
