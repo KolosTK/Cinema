@@ -1,11 +1,13 @@
 package com.example.cinema.Activities;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
    private  RecyclerView.Adapter adapterNowMovies,adapterUpcomming,adapterCategory;
    private RecyclerView recyclerViewNowMovies, recyclerViewUpcomming,recyclerViewCategory;
    private RequestQueue mRequestQueue;
+   private Button favouriteButton;
+
    private StringRequest mStringRequest, mStringRequest2, mStringRequest3;
    private ProgressBar loading1,loading2,loading3;
    private EditText searchMovies;
@@ -173,5 +177,12 @@ public class MainActivity extends AppCompatActivity {
         searchMovies=findViewById(R.id.searchMovies);
 
         mRequestQueue = Volley.newRequestQueue(this);
+
+        favouriteButton = findViewById(R.id.favouriteButton);
+
+        favouriteButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LikedActivity.class);
+            startActivity(intent);
+        });
     }
 }

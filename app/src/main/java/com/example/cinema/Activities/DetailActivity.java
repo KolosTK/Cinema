@@ -41,7 +41,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView movieNameTxt,movieRating, movieLength, movieSummaryInfo,movieActorsInfo;
 
     private int idFilm;
-    private ImageView image2,backImg;
+    private ImageView image2,backImg, heart;
+    private FilmItem currentFilm;
     private RecyclerView.Adapter adapterActorList, adapterCategory;
     private RecyclerView recyclerViewActors, recyclerViewCategory;
     private NestedScrollView scrollView;

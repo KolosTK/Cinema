@@ -10,6 +10,25 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
+    <Button
+        android:id="@+id/favouriteButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/button_background"
+        android:drawableStart="@drawable/heart"
+        android:ems="10"
+        android:hint="Liked moviest"
+        android:inputType="text"
+        android:padding="10dp"
+        android:paddingStart="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        tools:layout_editor_absoluteX="30dp" />
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -149,34 +168,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/recyclerView3" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
 
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="100dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent">-->
-
-<!--        <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:layout_gravity="bottom"-->
-<!--            android:backgroundTint="@color/violet">-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:orientation="horizontal">-->
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:orientation="vertical">-->
-
-<!--                </LinearLayout>-->
-<!--            </LinearLayout>-->
-<!--        </com.google.android.material.bottomappbar.BottomAppBar>-->
-<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
