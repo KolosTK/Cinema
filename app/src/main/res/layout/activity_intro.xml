@@ -8,14 +8,27 @@
     android:background="@color/black"
     tools:context=".Activities.IntroActivity">
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/getStartedButton"
+        style="@android:style/Widget.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="Get Started"
+        android:layout_margin="25dp"
+        android:textColor="@color/light_yellow"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView4" />
+
     <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -47,31 +60,42 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp">
+                android:layout_marginEnd="24dp"
+                android:orientation="vertical">
 
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Enjoy your booking"
-                    android:textAlignment="center"
                     android:layout_marginTop="15dp"
-                    android:textSize="25dp"
-                    android:textColor="@color/light_brown"/>
+                    android:text="ENJOY"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_brown"
+                    android:textSize="25dp" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/getStartedButton"
-                    android:layout_marginTop="30dp"
-                    style="@android:style/Widget.Button"
+                <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_background"
-                    android:text="Get Started"
-                    android:textSize="20dp"
-                    android:textColor="@color/light_yellow" />
+                    android:layout_marginTop="15dp"
+                    android:text="YOUR"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_brown"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="BOOKING"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_brown"
+                    android:textSize="25dp" />
+
+
             </LinearLayout>
 
         </LinearLayout>
