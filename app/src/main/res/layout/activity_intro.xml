@@ -31,7 +31,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/CiNemoLogo" />
+                    app:srcCompat="@drawable/cinemo_logo" />
 
                 <ImageView
                     android:id="@+id/imageView3"
