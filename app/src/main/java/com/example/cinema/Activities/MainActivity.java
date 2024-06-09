@@ -1,8 +1,12 @@
 package com.example.cinema.Activities;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
    private RequestQueue mRequestQueue;
    private StringRequest mStringRequest, mStringRequest2, mStringRequest3;
    private ProgressBar loading1,loading2,loading3;
+   private EditText searchMovies;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +45,50 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         initView();
+        setupSearch();
         sendRequestNowInCinema();
         sendRequestCategory();
         sendRequestUpcomming();
+    }
+
+    private void setupSearch() {
+        searchMovies.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!s.toString().isEmpty()) {
+                    searchMovies(s.toString());
+                }
+            }
+        });
+
+    }
+    private void searchMovies(String query) {
+        String url = "https://moviesapi.ir/api/v1/movies?q=" + Uri.encode(query) + "&page=1";
+        loading1.setVisibility(View.VISIBLE);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                response -> {
+                    Gson gson = new Gson();
+                    ListFilm items = gson.fromJson(response, ListFilm.class);
+                    if (adapterNowMovies == null) {
+                        adapterNowMovies = new FilmListAdapter(items);
+                        recyclerViewNowMovies.setAdapter(adapterNowMovies);
+                    } else {
+                        ((FilmListAdapter) adapterNowMovies).updateData(items);
+                    }
+                    loading1.setVisibility(View.GONE);
+                }, error -> {
+            loading1.setVisibility(View.GONE);
+            Log.e("SearchError", "Error in searching movies: " + error.toString());
+        });
+        mRequestQueue.add(stringRequest);
     }
 
     private void sendRequestNowInCinema() {
@@ -123,5 +169,9 @@ public class MainActivity extends AppCompatActivity {
         loading1=findViewById(R.id.progressBar1);
         loading2=findViewById(R.id.progressBar2);
         loading3=findViewById(R.id.progressBar3);
+
+        searchMovies=findViewById(R.id.searchMovies);
+
+        mRequestQueue = Volley.newRequestQueue(this);
     }
 }

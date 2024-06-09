@@ -30,11 +30,13 @@
                 android:background="@drawable/edit_text_background"
                 android:drawableStart="@drawable/baseline_search_24"
                 android:drawablePadding="10dp"
+
                 android:ems="10"
                 android:hint="Search Movies..."
                 android:inputType="text"
                 android:padding="10dp"
-                android:textColorHint="@color/yellow"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/light_brown"
                 android:textSize="20dp" />
 
             <TextView

@@ -58,6 +58,10 @@ public class FilmListAdapter extends RecyclerView.Adapter<FilmListAdapter.ViewHo
     public int getItemCount() {
         return items.getData().size();
     }
+    public void updateData(ListFilm newItems) {
+        this.items = newItems;
+        notifyDataSetChanged();
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView titleTxt;
