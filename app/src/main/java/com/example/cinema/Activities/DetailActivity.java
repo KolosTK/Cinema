@@ -31,6 +31,7 @@ import com.example.cinema.Adapters.CategoryListAdapter;
 import com.example.cinema.Adapters.FilmListAdapter;
 import com.example.cinema.Domains.FilmItem;
 import com.example.cinema.Domains.ListFilm;
+import com.example.cinema.Manager.LikedFilmsManager;
 import com.example.cinema.R;
 import com.google.gson.Gson;
 
@@ -43,6 +44,7 @@ public class DetailActivity extends AppCompatActivity {
     private int idFilm;
     private ImageView image2,backImg, heart;
     private FilmItem currentFilm;
+    private String filmId;
     private RecyclerView.Adapter adapterActorList, adapterCategory;
     private RecyclerView recyclerViewActors, recyclerViewCategory;
     private NestedScrollView scrollView;
@@ -113,5 +115,22 @@ public class DetailActivity extends AppCompatActivity {
             Intent intent = new Intent(DetailActivity.this, SeatsActivity.class);
             startActivity(intent);
         });
+
+        heart = findViewById(R.id.heart);
+        LikedFilmsManager likedFilmsManager = new LikedFilmsManager(this);
+
+        updateHeartIcon(likedFilmsManager.isFilmLiked(filmId));
+
+        heart.setOnClickListener(view -> {
+            likedFilmsManager.toggleFilmLiked(filmId);
+            updateHeartIcon(likedFilmsManager.isFilmLiked(filmId));
+        });
+    }
+    private void updateHeartIcon(boolean isLiked) {
+        if (isLiked) {
+            heart.setImageResource(R.drawable.clicked_heart_icon);
+        } else {
+            heart.setImageResource(R.drawable.heart);
+        }
     }
 }
