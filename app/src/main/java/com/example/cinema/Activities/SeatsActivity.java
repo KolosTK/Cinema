@@ -22,19 +22,19 @@ public class SeatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_seats);
 
         setupButton(findViewById(R.id.button1), 100);
-        setupButton(findViewById(R.id.button2), 100);
-        setupButton(findViewById(R.id.button3), 100);
+        setupButton(findViewById(R.id.button2), 250);
+        setupButton(findViewById(R.id.button3), 250);
         setupButton(findViewById(R.id.button4), 100);
         setupButton(findViewById(R.id.button5), 100);
         setupButton(findViewById(R.id.button6), 100);
-        setupButton(findViewById(R.id.button7), 100);
-        setupButton(findViewById(R.id.button8), 100);
-        setupButton(findViewById(R.id.button9), 100);
-        setupButton(findViewById(R.id.button10), 100);
-        setupButton(findViewById(R.id.button11), 100);
-        setupButton(findViewById(R.id.button12), 100);
-        setupButton(findViewById(R.id.button13), 100);
-        setupButton(findViewById(R.id.button14), 100);
+        setupButton(findViewById(R.id.button7), 200);
+        setupButton(findViewById(R.id.button8), 200);
+        setupButton(findViewById(R.id.button9), 250);
+        setupButton(findViewById(R.id.button10), 250);
+        setupButton(findViewById(R.id.button11), 300);
+        setupButton(findViewById(R.id.button12), 300);
+        setupButton(findViewById(R.id.button13), 200);
+        setupButton(findViewById(R.id.button14), 200);
 
         seatsAmount = findViewById(R.id.seatsAmount);
         costAmount = findViewById(R.id.costAmount);
