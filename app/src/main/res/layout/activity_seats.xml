@@ -23,13 +23,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="130dp"
         android:text="Cost : "
         android:textColor="@color/yellow"
         android:textFontWeight="@integer/material_motion_duration_medium_2"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emptyButton" />
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
 
     <TextView
         android:id="@+id/costAmount"
@@ -105,45 +105,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line" />
-
-    <Button
-        android:id="@+id/bookedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/yellow"
-        android:text="Booked"
-        android:textColor="@color/burgundy"
-        app:layout_constraintBottom_toBottomOf="@+id/selectedButton"
-        app:layout_constraintEnd_toStartOf="@+id/selectedButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/selectedButton" />
-
-    <Button
-        android:id="@+id/emptyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/burgundy"
-        android:text="Empty"
-        android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/selectedButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/selectedButton"
-        app:layout_constraintTop_toTopOf="@+id/selectedButton" />
-
-    <Button
-        android:id="@+id/selectedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/brown"
-        android:text="Selected"
-        android:textColor="@color/light_yellow"
-        app:layout_constraintEnd_toStartOf="@+id/emptyButton"
-        app:layout_constraintStart_toEndOf="@+id/bookedButton"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
 
     <Button
         android:id="@+id/button1"

@@ -31,7 +31,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/background_seats" />
+                    app:srcCompat="@drawable/CiNemoLogo" />
 
                 <ImageView
                     android:id="@+id/imageView3"
@@ -56,16 +56,21 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="Enjoy your booking"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:textSize="25dp"
                     android:textColor="@color/light_brown"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/getStartedButton"
+                    android:layout_marginTop="30dp"
                     style="@android:style/Widget.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background"
                     android:text="Get Started"
+                    android:textSize="20dp"
                     android:textColor="@color/light_yellow" />
             </LinearLayout>
 
